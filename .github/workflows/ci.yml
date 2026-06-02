@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['18', '20', '22']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install
+      - run: npm test
+
+  detection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install && npm run build
+
+      # The fixtures are deliberately hostile. A clean exit means the rules
+      # stopped firing, which is the regression that matters most here.
+      - name: Planted attacks are still detected
+        run: |
+          if node dist/cli.js scan --cwd examples/malicious --quiet; then
+            echo "::error::no high-severity findings in the malicious example"
+            exit 1
+          fi
+      - name: Vulnerable MCP config is still detected
+        run: |
+          if node dist/cli.js scan --config examples/vulnerable.mcp.json --quiet; then
+            echo "::error::no high-severity findings in the vulnerable MCP config"
+            exit 1
+          fi

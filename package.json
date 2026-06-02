@@ -1,0 +1,52 @@
+{
+  "name": "blastradius",
+  "version": "0.1.0",
+  "description": "Audit everything your AI coding agent trusts: hooks, skills, CLAUDE.md, subagents, permissions, and MCP servers.",
+  "keywords": [
+    "claude-code",
+    "mcp",
+    "ai-agents",
+    "security",
+    "audit",
+    "prompt-injection",
+    "supply-chain",
+    "hooks",
+    "agent-skills",
+    "cursor"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "blastradius": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.map",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/cli.js",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && node --test dist/*.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Desouki27/blastradius.git"
+  },
+  "homepage": "https://github.com/Desouki27/blastradius#readme",
+  "bugs": {
+    "url": "https://github.com/Desouki27/blastradius/issues"
+  },
+  "author": "Desouki27"
+}
