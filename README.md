@@ -368,11 +368,11 @@ Nothing is deleted, only quieted. `--paranoid` reports every suppressed match.
 $ npm test
 
 
-> blastradius@0.1.0 test
+> agent-blastradius@0.1.1 test
 > npm run build && node --test dist/*.test.js
 
 
-> blastradius@0.1.0 build
+> agent-blastradius@0.1.1 build
 > rm -rf dist && tsc
 
 ✔ normalize reads the mcpServers-wrapped schema (1.549252ms)

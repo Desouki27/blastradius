@@ -1,6 +1,6 @@
 {
   "name": "agent-blastradius",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Audit everything your AI coding agent trusts: hooks, skills, CLAUDE.md, subagents, permissions, and MCP servers.",
   "keywords": [
     "claude-code",
@@ -30,7 +30,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && tsc && chmod +x dist/cli.js",
     "dev": "tsc --watch",
     "start": "node dist/cli.js",
     "prepublishOnly": "npm run build",

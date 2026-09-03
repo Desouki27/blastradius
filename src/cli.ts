@@ -6,7 +6,7 @@ import { setParanoid } from "./rules/context.js";
 import { renderJson, renderText } from "./report.js";
 import { SEVERITY_ORDER, SURFACE_LABEL, type Severity, type SurfaceKind } from "./types.js";
 
-const VERSION = "0.1.0";
+const VERSION = "0.1.1";
 
 const HELP = `
 blastradius ${VERSION} - audit everything your AI coding agent trusts
