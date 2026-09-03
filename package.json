@@ -1,5 +1,5 @@
 {
-  "name": "blastradius",
+  "name": "agent-blastradius",
   "version": "0.1.0",
   "description": "Audit everything your AI coding agent trusts: hooks, skills, CLAUDE.md, subagents, permissions, and MCP servers.",
   "keywords": [

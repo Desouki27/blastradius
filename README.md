@@ -5,14 +5,14 @@
 **Audit everything your AI coding agent trusts.**
 
 [![CI](https://github.com/Desouki27/blastradius/actions/workflows/ci.yml/badge.svg)](https://github.com/Desouki27/blastradius/actions/workflows/ci.yml)
-[![npm version](https://img.shields.io/npm/v/blastradius.svg)](https://www.npmjs.com/package/blastradius)
+[![npm version](https://img.shields.io/npm/v/agent-blastradius.svg)](https://www.npmjs.com/package/agent-blastradius)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![node](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org)
 [![runtime dependencies: 0](https://img.shields.io/badge/runtime%20dependencies-0-brightgreen.svg)](package.json)
 [![tests: 48](https://img.shields.io/badge/tests-48%20passing-brightgreen.svg)](src/blastradius.test.ts)
 
 ```
-npx blastradius
+npx agent-blastradius
 ```
 
 </div>
@@ -63,7 +63,7 @@ logs it anywhere you would look. `blastradius` finds it.
 ## Demo
 
 ```console
-$ npx blastradius
+$ npx agent-blastradius
 
 blastradius 3 files, 4 trust surfaces
 
@@ -142,8 +142,8 @@ blastradius 3 files, 4 trust surfaces
 ## Install
 
 ```sh
-npx blastradius            # run once, install nothing
-npm i -g blastradius       # or keep it around
+npx agent-blastradius      # run once, install nothing
+npm i -g agent-blastradius # or keep it around
 ```
 
 Node 18 or newer. **Zero runtime dependencies.** A security tool should not ship
@@ -525,13 +525,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npx blastradius --fail-on medium
+      - run: npx agent-blastradius --fail-on medium
 ```
 
 For a repository that checks in an MCP config, audit that file alone:
 
 ```yaml
-- run: npx blastradius --config .mcp.json --fail-on medium
+- run: npx agent-blastradius --config .mcp.json --fail-on medium
 ```
 
 ---
